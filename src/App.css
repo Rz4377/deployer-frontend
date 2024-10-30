@@ -1,38 +1,140 @@
-.App {
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Main container */
+.app {
+  max-width: 500px;
+  width: 100%;
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app:hover {
+  transform: scale(1.02);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Title */
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #03dac5;
+}
+
+/* Form styles */
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #03dac5;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input:focus {
+  border-color: #bb86fc;
+}
+
+/* Button styles */
+.button {
+  padding: 15px;
+  background-color: #bb86fc;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #6200ea;
+}
+
+/* Error message */
+.error {
+  color: #cf6679;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Output container */
+.output {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.output-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #03dac5;
+  outline: none;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Copy button */
+.copy-button {
+  padding: 10px;
+  background-color: #03dac5;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #018786;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app {
+    width: 100%;
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
   }
 }
